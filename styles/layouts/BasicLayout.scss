@@ -1,0 +1,28 @@
+.noise::before{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content:"";
+    opacity: 0.05;
+    z-index: 10;
+    pointer-events: none;
+    background: url("/gifs/noise.gif") repeat;
+    background-size: 90%;
+    overflow: hidden;
+    @include md{
+        background-size: 40%;
+    }
+    @include lg{
+        background-size: 20%;
+    }
+}
+
+.main-content{
+    overflow: hidden;
+    .content{
+        width: 100%;
+        height: 100%;
+    }
+}
