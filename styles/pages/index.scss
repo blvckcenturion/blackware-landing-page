@@ -75,8 +75,10 @@
 
         .icon{
             height: 3vmax;
-
             @include lg {
+                height: 2.1vmax;
+            }
+            @include xl {
                 height: 1.8vmax;
             }
             color: $secondary-color;
@@ -93,6 +95,7 @@
     display: flex;
     flex-direction: row;
     justify-content: initial;
+    z-index: 3;
     transform: translateX(-20%);
     @include lg{
         width: 250vw;
@@ -111,4 +114,121 @@
             text-align:center;
         }
 
+}
+
+.overlay{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 1;
+    z-index: 6;
+
+    .left, .right{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        div{
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            div{
+                width: 100%;
+                height: 100%;
+                background-color: $secondary-color;
+            }
+        }
+    }
+    &-title{
+        position: absolute;
+        top:40%;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        height: 10%;
+        overflow: hidden;
+        @include lg{
+            width: 33%;
+            left: 33%;
+            right: 33%;
+        }
+        @include xl{
+            top:45%;
+            left: 40%;
+            right: 40%;
+            width: 20%;
+        }
+        h3{
+            color: $primary-color;
+            font-size: 2.2em;
+            opacity: 0;
+            margin: 0;
+            text-align: center;
+            @include md{
+                font-size: 2.4em;
+            }
+            @include xl{
+                font-size: 3em;
+            }
+        }
+    }
+    &-content{
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 15%;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        h1{
+            font-size: 2em;
+            margin: 10px;
+            opacity: 0;
+            @include md{
+                font-size: 3em;
+            }
+            @include xl{
+             font-size: 4em;
+            }
+            
+        }
+
+    }
+}
+
+.h-1{
+    color: #abd96d;
+}
+.h-2{
+    color: #fbbf54;
+}
+.h-3{
+    color: #227353;
+}
+.h-4{
+    color: #ee6b3c;
+}
+.h-5{
+    color: #3B28CC;
+}
+.h-6{
+    color: #ec0f47;
+}
+.h-7{
+    color: #2FB8DA;
+}
+.h-8{
+    color: #700460;
 }

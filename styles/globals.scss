@@ -30,8 +30,12 @@ body{
 
   h1, h2{
     font-family: $primary-font;
-
   }
+
+  h3,h4{
+    font-family: $secondary-font;
+  }
+
   button{
     padding: 10px;
     font-family: $secondary-font;
