@@ -29,5 +29,4 @@ export const ABOUT_PAGE_POINTS = [
     "Nuestro equipo creativo tiene un apetito por la innovación, con la misión de crear aplicaciones ingeniosas y prácticas de tecnología de vanguardia para nuestros clientes.",
     "Desde empresas unipersonales hasta compañías Fortune 500, equipamos a las marcas con las herramientas más efectivas y elegantes para cultivar relaciones significativas y duraderas con sus audiencias.",
     "Nuestra filosofía de trabajo es la de crear soluciones que se adapten a las necesidades de nuestros clientes, con una visión integral de la experiencia del usuario.",
-    "Contamos con un equipo sumamente experimentado dentro de las comunidades de diseño y desarrollo web, otorgandonos un excelente historial de confiabilidad, consistencia y resultados perfectos."
 ]
