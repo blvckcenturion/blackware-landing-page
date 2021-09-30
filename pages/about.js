@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Header from "../components/header"
 import gsap from "gsap"
-
+import { ABOUT_PAGE_POINTS } from "../utils/data"
 const About = () => {
 
     useEffect(() => {
@@ -33,11 +33,7 @@ const About = () => {
                     </div>  
                 </div>
                 <div className="about-page__enum">
-                    <EnumeratedContainer />
-                    <EnumeratedContainer />
-                    <EnumeratedContainer />
-                    <EnumeratedContainer />
-                    <EnumeratedContainer />
+                    {ABOUT_PAGE_POINTS.map((point, i) => <EnumeratedContainer key={i} n={i + 1} content={ point} />)}
                 </div>
             </div>
         </div>
@@ -47,17 +43,17 @@ const About = () => {
 export default About
 
 
-const EnumeratedContainer = () => {
+const EnumeratedContainer = ({ n, content}) => {
     return (
         <div className="enumerated-container">
             <div className="enumerated-container__number">
-                <h4 className="enumerated-container__h4">
-                    1.
+                <h4>
+                    {n}.
                 </h4>
             </div>
             <div className="enumerated-container__content">
                 <p>
-                Celebre estudio internacional de ingeniera de software impulsado por el enfoque extremo en el diseño y la experiencia del usuario.
+                    { content}
                 </p>
             </div>
         </div>
