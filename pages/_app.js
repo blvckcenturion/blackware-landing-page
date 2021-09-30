@@ -3,6 +3,7 @@ import 'normalize.css'
 import BasicLayout from '../layouts/BasicLayout'
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <BasicLayout>
       <Component {...pageProps} />

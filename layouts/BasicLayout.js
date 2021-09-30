@@ -21,7 +21,8 @@ const BasicLayout = ({ children }) => {
             <div className="noise"/>
             <Head>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="preload" href="/fonts/PPNeueMachina-Regular.otf" as="font" crossOrigin=""/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/> 
+                <link rel="preload" href="/fonts/Genesys.ttf" as="font" crossOrigin=""/>
                 <link rel="preload" href="/fonts/SFPRODISPLAYREGULAR.woff" as="font" crossOrigin="" />
                 <link rel="preload" href="/fonts/SFPRODISPLAYBOLD.woff" as="font" crossOrigin="" />
                 <link rel="preload" href="/fonts/SFPRODISPLAYBOLD.woff" as="font" crossOrigin="" />

@@ -3,7 +3,10 @@ import { Isotype } from "../components/Icons"
 import { useWindowSize } from "../utils/useWindowSize"
 import { SOCIAL_MEDIA_LINKS } from "../utils/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useRouter } from 'next/router';
 import gsap from "gsap"
+import next from "next"
+
 const Home = () => {
   const { width, height } = useWindowSize()
   const widthPercentage = width / 100 
@@ -15,6 +18,7 @@ const Home = () => {
     const leaveScreen = { opacity: 0, duration: .1, ease: "power3.out" }
 
     tl
+      .to('body', { backgroundColor: '#F4F6F3' })
       .fromTo(
         ".overlay-title__heading",
         { y: 200, opacity: 0.5, skewY: -30 },
@@ -54,7 +58,8 @@ const Home = () => {
       .to(['.h-6', '.h-8'], { ...enterScreen, duration: .25, ease: "power3.out" })
       .to(['.h-1', '.h-3', '.h-5', '.h-7', '.h-2', '.h-4', '.h-6', '.h-8'], { ...leaveScreen, duration: 1, display: "none" })
       .to('.left-top', { x: "110%", duration: .5, ease: "power2.inOut"})
-      .to('.right-top', { y: "110%", duration: .5, ease: "power2.inOutout"})
+      .to('.right-top', { y: "110%", duration: .5, ease: "power2.inOutout" })
+      .to('body', {backgroundColor: '#0E1B16', duration:0})
       .to('.right-bottom', {x: "-110%", duration: .5, ease: "power2.inOut"})
       .to('.left-bottom', { y: "-110%", duration: .5, ease: "power2.inOut" })
       .to('.overlay', {display: "none", duration:0})
@@ -80,8 +85,18 @@ const Home = () => {
   }, [width])
 
 
+  const navigateToAbout = (href) => {
+    const tl = gsap.timeline();
+    tl
+      .to('body', { overflow: 'hidden', duration: 0 }).to('.about-wrapper', { width: '210vw', height: '210vw', duration: 1.5, ease: "power3.out" })
+      .to('.about-wrapper', { borderRadius: '0', duration: 1, delay: -1, ease: "power3.out" })
+      .then(() => next.router.push(href))
+  }
+
   return (
     <div className="content-wrapper">
+      <div className="about-wrapper"/>
+      <div className="contact-wrapper"/>
       <Overlay/>
       <div className="isotype-wrapper">
         <Isotype/>
@@ -90,10 +105,10 @@ const Home = () => {
         <InfiniteText/>
       </div>
       <div className="main-content-wrapper">
-        <button className="main-button">
+        <button className="main-button" onClick={ () => navigateToAbout('/about') }>
           Sobre Nosotros.
         </button>
-        <button className="main-button">
+        <button className="main-button" onClick={ () => navigateToAbout('/contact') }>
           Contratanos.
         </button>
       </div>
