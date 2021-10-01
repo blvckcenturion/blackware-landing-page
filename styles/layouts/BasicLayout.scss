@@ -10,7 +10,7 @@
     pointer-events: none;
     background: url("/gifs/noise.gif") repeat;
     background-size: 70%;
-    overflow: hidden;
+
     @include md{
         background-size: 30%;
     }
@@ -19,10 +19,4 @@
     }
 }
 
-.main-content{
-    overflow: hidden;
-    .content{
-        width: 100%;
-        height: 100%;
-    }
-}
+

@@ -75,7 +75,8 @@
         border-top: 1px solid $secondary-color;
 
         .icon{
-            height: 3vmax;
+            height: 3.5vmax;
+            
             @include lg {
                 height: 2.1vmax;
             }
@@ -102,19 +103,18 @@
         width: 250vw;
         transform: translateX(-10%);
     }
-        .box{
-            width:50vw;
-            @include lg{
-                width: 25vw;
-            }
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-
-            text-align:center;
+    .box{
+        width:50vw;
+        @include lg{
+            width: 25vw;
         }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
 
+        text-align:center;
+    }
 }
 
 .overlay{

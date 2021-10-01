@@ -1,17 +1,25 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react"
 import Header from "../components/header"
 import gsap from "gsap"
 import { ABOUT_PAGE_POINTS } from "../utils/data"
-import Image from "next/image"
+import Link from "next/link"
+import Image from 'next/image'
+import { Isotype } from "../components/Icons"
+import { SOCIAL_MEDIA_LINKS } from "../utils/data"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Footer from '../components/footer';
 const About = () => {
 
     useEffect(() => {
         const tl = gsap.timeline()
-        tl.to('body', {backgroundColor: '#F4F6F3', duration: 0})
+        tl.to('body', {backgroundColor: "#F4F6F3", duration: 0})
     }, [])
     return (
+        <>
+        <div className="noise"/>
+        <Header/>
         <div className="about-page">
-            <Header />
             <div className="about-page__content">    
                 <div className="about-page__heading">
                     <div className="about-page__heading-title">
@@ -19,7 +27,6 @@ const About = () => {
                             SOMOS BLACKWARE.
                         </h1>
                     </div>
-                    
                     <div className="about-page__heading-content">
                         <div className="about-page__heading-content-p">
                             <p>
@@ -52,16 +59,47 @@ const About = () => {
                     </div>
                 </div>
                 <div className="about-page__belief">
+                <div className="about-page__belief-text">
+                        <div className="belief-heading">
+                            <h2>Nuestra Creencia.</h2>
+                        </div>
+                        <div className="belief-parragraph">
+                            <p>
+                            Somos un  grupo de rebeldes creativos que creen que el software y el diseño pueden empoderar a cualquier negocio, especialmente en esta era digital.
+basandonos en la experiencia perfeccionada para empoderar a las personas, las empresas y el mundo digital en general. a traves de aplicaciones web que permiten establecer una fuerte conexion digital con sus usuarios y/o clientes.
 
+                            </p>
+                        </div>
+                    </div>
+                    <div className="about-page__belief-img">
+                        <img className="belief-img" src="/images/acrnm.png" alt="ACRNM Website" layout="fill" />
+                    </div>
                 </div>
                 <div className="about-page__projects">
-
+                    <div className="about-page__projects-heading">
+                        <h2>Algunos de nuestros proyectos.</h2>
+                    </div>
+                    <ProjectContainer />
+                    <ProjectContainer />
+                    <ProjectContainer/>
+                    </div>
+                <div className="about-page__cta">
+                    <div className="about-page__cta-heading">
+                        <h2>Digitaliza tu negocio con Nosotros.</h2>
+                        </div>
+                    <div className="about-page__cta-content">
+                            <div className="cta-parragraph">
+                                <p>Proporcione un efecto elegante y dinámico en su negocio a través de increíbles diseños web y ejecute un plan de negocios perfecto a través de nuestras técnicas de desarrollo web de alta tecnología. Permitimos que su idea llegue al público objetivo de una manera personalizada, amigable y auténtica.</p>
+                            </div>
+                            <button>
+                                Comenzemos.    
+                            </button>
+                    </div>
                 </div>
             </div>
-            <div className="footer">
-
             </div>
-        </div>
+            <Footer/>
+        </>
     )
 }
 
@@ -84,3 +122,29 @@ const EnumeratedContainer = ({ n, content}) => {
         </div>
     )
 }
+
+const ProjectContainer = () => {
+    return (
+        <div className="about-page__projects-proj">
+            <div className="proj-heading">
+                <div className="proj-name">
+                    <h3>The Detox Market</h3>
+                </div>
+                <div className="proj-url">
+                    <Link href="https://thedetoxmarket.com" >
+                        <a target="_blank">thedetoxmarket.com</a>
+                    </Link>
+                </div>
+            </div>
+            <div className="proj-img">
+                <div className="proj-img__mobile">
+                    <img src="/images/cheemi.png" alt="The Detox Market Mobile"  />
+                </div>
+                <div className="proj-img__desktop">
+                    <img src="/images/acrnm.png" alt="The Detox Market Desktop"  />
+                </div>
+            </div>
+        </div>
+    )
+}
+

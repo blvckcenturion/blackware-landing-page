@@ -25,9 +25,8 @@
 }
 
 body{
-
-  background-color: $secondary-color;
   color: $secondary-color;
+
   font-family: $secondary-font;
 
 
@@ -71,3 +70,6 @@ body{
 }
 
 
+html, body {
+  overscroll-behavior-y: none;
+}

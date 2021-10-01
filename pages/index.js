@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from 'next/router';
 import gsap from "gsap"
 import next from "next"
+import BasicLayout from "../layouts/BasicLayout"
 
 const Home = () => {
   const { width, height } = useWindowSize()
@@ -18,7 +19,8 @@ const Home = () => {
     const leaveScreen = { opacity: 0, duration: .1, ease: "power3.out" }
 
     tl
-      .to('body', { backgroundColor: '#F4F6F3' })
+      .to('body', { backgroundColor: '#F4F6F3', duration: 0,})
+      
       .fromTo(
         ".overlay-title__heading",
         { y: 200, opacity: 0.5, skewY: -30 },
@@ -57,9 +59,11 @@ const Home = () => {
       .to(['.h-2', '.h-4'], { ...enterScreen, duration: .25, ease: "power3.out" })
       .to(['.h-6', '.h-8'], { ...enterScreen, duration: .25, ease: "power3.out" })
       .to(['.h-1', '.h-3', '.h-5', '.h-7', '.h-2', '.h-4', '.h-6', '.h-8'], { ...leaveScreen, duration: 1, display: "none" })
+      .to('.content-wrapper', {backgroundColor: '#0E1B16', duration:0}, )
       .to('.left-top', { x: "110%", duration: .5, ease: "power2.inOut"})
       .to('.right-top', { y: "110%", duration: .5, ease: "power2.inOutout" })
-      .to('body', {backgroundColor: '#0E1B16', duration:0})
+      .to('body', { backgroundColor: '#0E1B16', duration: 0 })
+      
       .to('.right-bottom', {x: "-110%", duration: .5, ease: "power2.inOut"})
       .to('.left-bottom', { y: "-110%", duration: .5, ease: "power2.inOut" })
       .to('.overlay', {display: "none", duration:0})
@@ -88,38 +92,42 @@ const Home = () => {
   const navigateToAbout = (href) => {
     const tl = gsap.timeline();
     tl
-      .to('body', { overflow: 'hidden', duration: 0 }).to('.about-wrapper', { width: '210vw', height: '210vw', duration: 1.5, ease: "power3.out" })
+      .to('body', { overflow: 'hidden', backgroundColor: "#F4F6F3", duration: 0 })
+      .to('.about-wrapper', { width: '210vw', height: '210vw', duration: 1.5, ease: "power3.out" })
+      .to('body', { backgroundColor: "#F4F6F3", duration: 0 })
       .to('.about-wrapper', { borderRadius: '0', duration: 1, delay: -1, ease: "power3.out" })
       .then(() => next.router.push(href))
   }
 
   return (
-    <div className="content-wrapper">
-      <div className="about-wrapper"/>
-      <div className="contact-wrapper"/>
-      <Overlay/>
-      <div className="isotype-wrapper">
-        <Isotype/>
-      </div>
-      <div className="logotype-wrapper">
-        <InfiniteText/>
-      </div>
-      <div className="main-content-wrapper">
-        <button className="main-button" onClick={ () => navigateToAbout('/about') }>
-          Sobre Nosotros.
-        </button>
-        <button className="main-button" onClick={ () => navigateToAbout('/contact') }>
-          Contratanos.
-        </button>
-      </div>
-      <div className="socials-wrapper">
-        {SOCIAL_MEDIA_LINKS.map(({ href, icon }, i) => (
-              <a className="nav-social" key={i} href={href} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={icon} className="icon"/>
-              </a>
-          ))}
-      </div>
-    </div>
+    <BasicLayout>
+      <div className="content-wrapper">
+        <div className="about-wrapper"/>
+        <div className="contact-wrapper"/>
+        <Overlay/>
+        <div className="isotype-wrapper">
+          <Isotype/>
+        </div>
+        <div className="logotype-wrapper">
+          <InfiniteText/>
+        </div>
+        <div className="main-content-wrapper">
+          <button className="main-button" onClick={ () => navigateToAbout('/about') }>
+            Sobre Nosotros.
+          </button>
+          <button className="main-button" onClick={ () => navigateToAbout('/contact') }>
+            Contratanos.
+          </button>
+        </div>
+        <div className="socials-wrapper">
+          {SOCIAL_MEDIA_LINKS.map(({ href, icon }, i) => (
+                <a className="nav-social" key={i} href={href} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={icon} className="icon"/>
+                </a>
+            ))}
+        </div>
+        </div>
+      </BasicLayout>
   )
 } 
   
