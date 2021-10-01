@@ -10,14 +10,21 @@
         align-items: center;
     }
     .footer-logo{
-        width: 20%;
+        width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
         svg{
-            width: 30%;
+            width: 60%;
+            @include md{
+                width: 40%;
+            }
+            @include lg{
+                width: 20%;
+            }
             path{
                 stroke: $primary-color;
+                stroke-width: 20;
             }
         }
         

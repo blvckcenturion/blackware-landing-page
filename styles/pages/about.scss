@@ -246,6 +246,16 @@
         border-top: 1px solid $primary-color;
         &-heading{
             text-align: center;
+            h2{
+                @include md{
+                    font-size: 2.5rem;    
+                }
+                font-size: 1.8rem;
+                
+            }
+        }
+        &-content{
+            text-align: justify;
         }
         button{
             margin-top: 50px;

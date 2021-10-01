@@ -8,17 +8,28 @@ import Image from 'next/image'
 import { Isotype } from "../components/Icons"
 import { SOCIAL_MEDIA_LINKS } from "../utils/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Footer from '../components/footer';
+import Footer from '../components/footer'
+import { useRouter } from 'next/router'
+import EnumeratedContainer from "../components/enumeratedContainer"
 const About = () => {
 
+    const router = useRouter()
     useEffect(() => {
         const tl = gsap.timeline()
         tl.to('body', {backgroundColor: "#F4F6F3", duration: 0})
     }, [])
+
+    const goToContact = () => {
+        const tl = gsap.timeline()
+        tl
+            .to('body', { duration: 0, overflow: 'initial'})
+            .to('.wrapper', { opacity: 0, duration: 1 }).then(() => router.push('/contact'))
+     }
     return (
         <>
         <div className="noise"/>
-        <Header/>
+        <div className="wrapper">
+                <Header contact={ goToContact }/>
         <div className="about-page">
             <div className="about-page__content">    
                 <div className="about-page__heading">
@@ -30,11 +41,11 @@ const About = () => {
                     <div className="about-page__heading-content">
                         <div className="about-page__heading-content-p">
                             <p>
-                            Creamos experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital.
+                            Creamos aplicaciones web que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital.
                             </p>
                         </div>
                         <div className="about-page__heading-content-action">
-                            <button>
+                                    <button onClick={ goToContact}>
                                 Quiero una aplicacion web.
                             </button>
                         </div>
@@ -88,40 +99,25 @@ basandonos en la experiencia perfeccionada para empoderar a las personas, las em
                         <h2>Digitaliza tu negocio con Nosotros.</h2>
                         </div>
                     <div className="about-page__cta-content">
-                            <div className="cta-parragraph">
-                                <p>Proporcione un efecto elegante y dinámico en su negocio a través de increíbles diseños web y ejecute un plan de negocios perfecto a través de nuestras técnicas de desarrollo web de alta tecnología. Permitimos que su idea llegue al público objetivo de una manera personalizada, amigable y auténtica.</p>
-                            </div>
-                            <button>
-                                Comenzemos.    
-                            </button>
+                        <div className="cta-parragraph">
+                            <p>Proporcione un efecto elegante y dinámico en su negocio a través de increíbles diseños web y ejecute un plan de negocios perfecto a través de nuestras técnicas de desarrollo web de alta tecnología. Permitimos que su idea llegue al público objetivo de una manera personalizada, amigable y auténtica.</p>
+                        </div>
+                            <button onClick={ goToContact }>
+                            Comenzemos.    
+                        </button>
                     </div>
                 </div>
             </div>
             </div>
             <Footer/>
-        </>
+            </div>
+            </>
     )
 }
 
 export default About
 
 
-const EnumeratedContainer = ({ n, content}) => {
-    return (
-        <div className="enumerated-container">
-            <div className="enumerated-container__number">
-                <h4>
-                    {n}.
-                </h4>
-            </div>
-            <div className="enumerated-container__content">
-                <p>
-                    { content}
-                </p>
-            </div>
-        </div>
-    )
-}
 
 const ProjectContainer = () => {
     return (

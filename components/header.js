@@ -3,7 +3,7 @@ import { Isotype } from './Icons'
 import gsap from 'gsap'
 import { useRouter } from 'next/router'
 
-const Header = () => {
+const Header = ({ contact }) => {
 
     const router = useRouter()
     console.log(router)
@@ -25,7 +25,7 @@ const Header = () => {
 
                 <div className="contact-us">
                     {router.route !== '/contact' && (
-                        <button>
+                        <button onClick={ contact}>
                             Contratanos.
                         </button>
                     )

@@ -3,14 +3,14 @@ import { Isotype } from "../components/Icons"
 import { useWindowSize } from "../utils/useWindowSize"
 import { SOCIAL_MEDIA_LINKS } from "../utils/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import gsap from "gsap"
-import next from "next"
 import BasicLayout from "../layouts/BasicLayout"
 
 const Home = () => {
   const { width, height } = useWindowSize()
-  const widthPercentage = width / 100 
+  const widthPercentage = width / 100
+  const router = useRouter()
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -96,7 +96,7 @@ const Home = () => {
       .to('.about-wrapper', { width: '210vw', height: '210vw', duration: 1.5, ease: "power3.out" })
       .to('body', { backgroundColor: "#F4F6F3", duration: 0 })
       .to('.about-wrapper', { borderRadius: '0', duration: 1, delay: -1, ease: "power3.out" })
-      .then(() => next.router.push(href))
+      .then(() => router.push(href))
   }
 
   return (

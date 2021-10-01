@@ -9,6 +9,7 @@
     transition: all 0.3s ease-in-out;
     padding: 10px 0;
     text-align: justify;
+    color: $primary-color;
     @include md{
         height: 15vh;
     }
