@@ -7,10 +7,11 @@
     color: $primary-color;
     margin-top: 50px;
     
+    
     &__content{
         width: 90vw;
         padding: 50px 0;
-
+        opacity: 0;
         @include lg{
             width: 80%;
         }

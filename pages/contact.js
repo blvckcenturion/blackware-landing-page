@@ -10,7 +10,9 @@ const Contact = () => {
 
     useEffect(() => {
         const tl = gsap.timeline()
-        tl.to('body', {backgroundColor: '#F4F6F3', duration: 0})
+        tl.to('body', { backgroundColor: '#F4F6F3', duration: 0 })
+        .fromTo('.contact-page__content', { opacity: 0,  skewX: 10 }, { opacity: 1,  skewX: 0,duration: 2, })
+        
     }, [])
 
     return (
