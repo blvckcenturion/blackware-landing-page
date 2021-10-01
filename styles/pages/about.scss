@@ -30,22 +30,7 @@
         flex-direction: column;
         padding-bottom: 50px;
         border-bottom: 1px solid $primary-color;
-        h1{
-            font-size: 2.2rem;
-            text-align: center;
-
-            @include md{
-                font-size: 4rem;
-            }
-            
-            @include lg{
-                font-size: 4.5rem;
-            }
-
-            @include xl{
-                font-size: 6rem;
-            }
-        }    
+          
 
         &-content{
             width: 90%;
@@ -90,6 +75,7 @@
         justify-content: space-evenly;
         border-bottom: 1px solid $primary-color;
         flex-direction: column;
+        border-top: 1px solid $primary-color;
         @include md{
             flex-direction: row;
         }
@@ -175,13 +161,7 @@
             width: 100%;
             border-bottom: 1px solid $primary-color;
             padding-bottom: 50px;
-            h2{
-                @include md{
-                    font-size: 2.5rem;    
-                }
-                font-size: 1.8rem;
-                
-            }
+            
         }
         &-proj{
             width: 100%;
@@ -202,12 +182,7 @@
                 @include md{
                     width: 90%;
                 }
-                h3{
-                    font-size: 1.2rem;
-                    @include md{
-                        font-size: 2.2rem;
-                    }
-                }
+                
                 a{
                     color: $primary-color;
                 }
@@ -246,13 +221,6 @@
         border-top: 1px solid $primary-color;
         &-heading{
             text-align: center;
-            h2{
-                @include md{
-                    font-size: 2.5rem;    
-                }
-                font-size: 1.8rem;
-                
-            }
         }
         &-content{
             text-align: justify;

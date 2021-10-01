@@ -34,13 +34,44 @@ body{
   h1, h2{
     font-family: $primary-font;
   }
-  h2{
-    font-size: 2.5rem;
+
+  h1,h2,h3{
+    font-weight: 400;
   }
+
+  h2{
+    @include md{
+        font-size: 2.5rem;    
+    }
+    font-size: 1.7rem;
+}
 
   h3,h4{
     font-family: $secondary-font;
   }
+  h3{
+    font-size: 1.4rem;
+    @include md{
+        font-size: 2.2rem;
+    }
+}
+  h1{
+    font-size: 2.6rem;
+    text-align: center;
+    font-weight: 400;
+
+    @include md{
+        font-size: 4rem;
+    }
+    
+    @include lg{
+        font-size: 4.5rem;
+    }
+
+    @include xl{
+        font-size: 5rem;
+    }
+  }  
   p{
     font-size: 1.1rem;
     @include md{

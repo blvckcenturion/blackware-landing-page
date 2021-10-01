@@ -1,6 +1,157 @@
-.contact-page__wrapper{
+.contact-page{
     overflow: hidden;
     background-color: $secondary-color;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $primary-color;
+    margin-top: 50px;
+    
+    &__content{
+        width: 90vw;
+        padding: 50px 0;
+
+        @include lg{
+            width: 80%;
+        }
+        @include xl{
+            width: 70%;
+        }
+        color: $primary-color;
+    }
+    &__heading{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border-bottom: 1px solid $primary-color;
+    }
+    &__offer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border-bottom: 1px solid $primary-color;
+        padding-bottom: 50px;
+        &-heading{
+            width: 100%;
+            text-align: center;
+        }
+        &-content{
+            width: 100%;
+            height: 150vh;
+            @include md{
+                height: 80vh;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            @include md{
+                flex-direction: row;
+            }
+            
+            .offer-setup, .offer-training{
+                width: 100%;
+                height: 80%;
+                transition: all ease-in-out .3s;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: column;
+                
+                @include md{
+                    width: 40%;
+                    height: 100%;
+                }
+
+                div{
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    flex-direction: column;
+                    h3{
+                        margin: 0;
+                    }
+                    .offer-training__img, .offer-setup__img{
+                        width: 100%;
+                        @include md{
+                            height: 40%;
+                        }
+                    }
+                    img{
+                        width: 80%;
+                        height: 80%;
+                        object-fit: cover;
+                        @include md{
+                            width: 100%;
+                            height: 90%;
+                        }
+                    }
+                }
+                .offer-setup__content, .offer-training__content{
+                    width: 80%;
+                    height: 60%;
+                    @include md{
+                        width: 90%;
+                        height: 50%;
+                    }
+                    p{
+                        font-size: .8rem;
+                        text-align: justify;
+                        @include md{
+                          font-size: 1rem;
+                        }
+                        @include lg{
+                          font-size: 1.1rem;
+                        }
+                        @include xl{
+                          font-size: 1.2rem;
+                        }
+                    }
+                    h3{
+                        text-align: center;
+                    }
+                }
+            }
+            .offer-setup{
+                
+                @include md{
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+        
+    }
+    &__free-quote{
+        border-top: 1px solid $primary-color;
+        width: 100%;
+        display: flex;
+        padding: 20px 0;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        &-content{
+            flex-direction: column;
+            @include md{
+                flex-direction: row;
+            }
+            text-align: justify;
+            button{
+                margin-top: 10px;
+                width: 100%;
+                border: 1px solid $primary-color;
+                padding: 20px ;
+            }
+        }
+        
+    }
+    h2{
+        text-align: center;
+    }
 }

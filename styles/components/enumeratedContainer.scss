@@ -5,10 +5,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+
     border-bottom: 1px solid $primary-color;
     transition: all 0.3s ease-in-out;
     padding: 10px 0;
     text-align: justify;
+    &:last-child{
+        border-bottom: none;
+    }
     color: $primary-color;
     @include md{
         height: 15vh;
