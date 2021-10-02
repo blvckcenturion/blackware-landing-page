@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from 'next/router'
 import gsap from "gsap"
 import BasicLayout from "../layouts/BasicLayout"
+import Heading from "../components/heading"
 
 const Home = () => {
   const { width, height } = useWindowSize()
@@ -63,7 +64,6 @@ const Home = () => {
       .to('.left-top', { x: "110%", duration: .5, ease: "power2.inOut"})
       .to('.right-top', { y: "110%", duration: .5, ease: "power2.inOutout" })
       .to('body', { backgroundColor: '#0E1B16', duration: 0 })
-      
       .to('.right-bottom', {x: "-110%", duration: .5, ease: "power2.inOut"})
       .to('.left-bottom', { y: "-110%", duration: .5, ease: "power2.inOut" })
       .to('.overlay', {display: "none", duration:0})
@@ -101,6 +101,7 @@ const Home = () => {
 
   return (
     <BasicLayout>
+      <Heading title={"BLACKWARE®"} description={"Desarrollamos aplicaciones web para negocios que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital."}/>
       <div className="content-wrapper">
         <div className="about-wrapper"/>
         <div className="contact-wrapper"/>

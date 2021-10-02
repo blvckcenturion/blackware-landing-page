@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import Footer from '../components/footer'
 import { CONTACT_PAGE_POINTS } from '../utils/data';
 import EnumeratedContainer from '../components/enumeratedContainer';
+import Heading from '../components/heading';
 
 const Contact = () => {
 
@@ -17,9 +18,10 @@ const Contact = () => {
 
     return (
         <>
+            <Header />
+            <Heading title={"Contacto - BLACKWARE®"} description={"Desarrollamos aplicaciones web para negocios que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital."}/>
             <div className="noise"/>
             <div className="wrapper">
-                <Header />
                 <div className="contact-page">
                     <div className="contact-page__content">
                         <div className="contact-page__heading">

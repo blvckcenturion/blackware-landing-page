@@ -30,9 +30,12 @@ export const ABOUT_PAGE_POINTS = [
     "Desde empresas unipersonales hasta compañías Fortune 500, equipamos a las marcas con las herramientas más efectivas y elegantes para cultivar relaciones significativas y duraderas con sus audiencias.",
     "Nuestra filosofía de trabajo es la de crear soluciones que se adapten a las necesidades de nuestros clientes, con una visión integral de la experiencia del usuario.",
 ]
+
 export const CONTACT_PAGE_POINTS = [
     "Evaluamos la situacion de tu negocio y te brindamos una oferta a la medida para traer tu negocio a la web de la forma adecuada.",
     "Te desarrollamos una aplicacion web magnifica y personalizada acorde a tus necesidades y al rubro en el que te encuentras.",
     "Establecemos una comunicacion constante para asegurarnos la efectividad de la solucion que estamos brindando para tu negocio.",
-    "Te damos mantenimiento constante asi como mentorias y guias para el manejo y el crecimiento de tu aplicacion web.",
+    "Te damos mantenimiento constante asi como asesoramiento y guias para el manejo y el crecimiento de tu aplicacion web.",
 ]
+
+export const CURRENT_URL = "https://blackware.tech"

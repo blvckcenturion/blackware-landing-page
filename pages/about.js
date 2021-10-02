@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Footer from '../components/footer'
 import { useRouter } from 'next/router'
 import EnumeratedContainer from "../components/enumeratedContainer"
+import Heading from "../components/heading"
 const About = () => {
 
     const router = useRouter()
@@ -28,6 +29,7 @@ const About = () => {
      }
     return (
         <>
+            <Heading title={"Sobre Nosotros - BLACKWARE®"} description={"Desarrollamos aplicaciones web para negocios que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital."}/>
         <div className="noise"/>
         <div className="wrapper">
                 <Header contact={ goToContact }/>
@@ -46,7 +48,7 @@ const About = () => {
                             </p>
                         </div>
                         <div className="about-page__heading-content-action">
-                                    <button onClick={ goToContact}>
+                            <button onClick={ goToContact}>
                                 Quiero una aplicacion web.
                             </button>
                         </div>
