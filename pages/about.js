@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import Header from "../components/header"
 import gsap from "gsap"
-import { ABOUT_PAGE_POINTS } from "../utils/data"
+import { ABOUT_PAGE_POINTS, CASES } from "../utils/data"
 import Link from "next/link"
 import Image from 'next/image'
 import { Isotype } from "../components/Icons"
@@ -102,9 +102,7 @@ basandonos en la experiencia perfeccionada para empoderar a las personas, las em
                     <div className="about-page__projects-heading">
                         <h2>Algunos de nuestros proyectos.</h2>
                     </div>
-                    <ProjectContainer />
-                    <ProjectContainer />
-                    <ProjectContainer/>
+                            {CASES.map((e, i) => <ProjectContainer key={i} project={ e } />)}
                     </div>
                 <div className="about-page__cta">
                     <div className="about-page__cta-heading">
@@ -131,25 +129,26 @@ export default About
 
 
 
-const ProjectContainer = () => {
+const ProjectContainer = ({ project}) => {
+    const { name, url, mobileImg, desktopImg, alt } = project;
     return (
         <div className="about-page__projects-proj">
             <div className="proj-heading">
                 <div className="proj-name">
-                    <h3>The Detox Market</h3>
+                    <h3>{ name }</h3>
                 </div>
                 <div className="proj-url">
-                    <Link href="https://thedetoxmarket.com" >
-                        <a target="_blank">thedetoxmarket.com</a>
+                    <Link href={url} >
+                        <a target="_blank">{ url }</a>
                     </Link>
                 </div>
             </div>
             <div className="proj-img">
                 <div className="proj-img__mobile">
-                    <img src="/images/cheemi.png" alt="The Detox Market Mobile"  />
+                    <img src={`/images/jobs/${mobileImg}`} alt={`${alt} Mobile`}/>
                 </div>
                 <div className="proj-img__desktop">
-                    <img src="/images/acrnm.png" alt="The Detox Market Desktop"  />
+                    <img src={`/images/jobs/${desktopImg}`} alt={`${alt} Desktop`}  />
                 </div>
             </div>
         </div>

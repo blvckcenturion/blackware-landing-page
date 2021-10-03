@@ -39,3 +39,26 @@ export const CONTACT_PAGE_POINTS = [
 ]
 
 export const CURRENT_URL = "https://blackware.tech"
+
+export const CASES = [
+    {
+        name: "BRISTOL STUDIO",
+        url: "https://bristol-studio.com/",
+        desktopImg: 'bristol-desktop.png',
+        mobileImg: 'bristol-mobile.png',
+        alt: "Aplicacion Web de Bristol Studio",
+    },
+    {
+        name: "GLOSS LEAF",
+        url: "https://glossleaf.com/",
+        desktopImg: 'gloss-desktop.png',
+        mobileImg: 'gloss-mobile.png',
+        alt: "Aplicacion Web de Gloss Leaf",
+    },{
+        name: "VERVE COFFEE ROASTERS",
+        url: "https://www.vervecoffee.com/",
+        desktopImg: 'verve-desktop.png',
+        mobileImg: 'verve-mobile.png',
+        alt: "Aplicacion Web de Verve Coffee Roasters",
+    }
+]
