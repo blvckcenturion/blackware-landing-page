@@ -12,13 +12,21 @@ import Footer from '../components/footer'
 import { useRouter } from 'next/router'
 import EnumeratedContainer from "../components/enumeratedContainer"
 import Heading from "../components/heading"
+import ScrambleText from 'scramble-text';
 const About = () => {
 
     const router = useRouter()
     useEffect(() => {
         const tl = gsap.timeline()
-        tl.to('body', { backgroundColor: "#F4F6F3", overflow: 'initial', duration: 0 })
-        .fromTo('.about-page__content', { opacity: 0,  skewX: 10 }, { opacity: 1,  skewX: 0,duration: 2, })
+        tl
+            .to('body', { backgroundColor: "#F4F6F3", overflow: "hidden", duration: 0 })
+            .to('.about-page', {opacity:1, duration: 0})
+            .fromTo('.heading_animated-1', { opacity: 0, scale: 0}, { opacity: 1, scale:1, duration: .8, stagger: { amount: 1.5}, delay: 2, ease: "power3.inOut" })
+            .fromTo('.about-page__heading-content-p', { opacity: 0, x: -100, skewY: 10 }, { opacity: 1, x: 0, skewY: 0, duration: .8, delay: -.5, ease: "power3.inOut" })
+            .fromTo('.about-page__heading-content-action button', { opacity: 0, x: 100, skewY: -10 }, { opacity: 1, x: 0, skewY: 0, duration: .5, ease: "power3.inOut" })
+            .fromTo('.about-page__enum', {opacity: 0, scaleX: 0} , { opacity: 1, scaleX: 1, duration: 1, ease: "power3.inOut" })
+            .to('body', {  overflow: 'initial', duration: 0 })
+            
     }, [])
 
     const goToContact = () => {
@@ -26,10 +34,11 @@ const About = () => {
         tl
             .to('body', { duration: 0, overflow: 'initial'})
             .to('.wrapper', { opacity: 0, duration: 1 }).then(() => router.push('/contact'))
+            
      }
     return (
         <>
-            <Heading title={"Sobre Nosotros - BLACKWARE®"} description={"Desarrollamos aplicaciones web para negocios que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital."}/>
+        <Heading title={"Sobre Nosotros - BLACKWARE®"} description={"Desarrollamos aplicaciones web para negocios que brindan experiencias digitales hermosas a traves del uso de tecnologias vanguardistas que adaptan negocios al mundo digital."}/>
         <div className="noise"/>
         <div className="wrapper">
                 <Header contact={ goToContact }/>
@@ -38,7 +47,7 @@ const About = () => {
                 <div className="about-page__heading">
                     <div className="about-page__heading-title">
                         <h1>
-                            SOMOS BLACKWARE.
+                                    {"SOMOS BLACKWARE.".split("").map((e, i) => <span className="heading_animated-1" key={i}>{e}</span>)}
                         </h1>
                     </div>
                     <div className="about-page__heading-content">
@@ -99,7 +108,7 @@ basandonos en la experiencia perfeccionada para empoderar a las personas, las em
                     </div>
                 <div className="about-page__cta">
                     <div className="about-page__cta-heading">
-                        <h2>Digitaliza tu negocio con Nosotros.</h2>
+                        <h2>Digitaliza tu negocio con nosotros.</h2>
                         </div>
                     <div className="about-page__cta-content">
                         <div className="cta-parragraph">

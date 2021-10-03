@@ -11,9 +11,14 @@ const Contact = () => {
 
     useEffect(() => {
         const tl = gsap.timeline()
-        tl.to('body', { backgroundColor: '#F4F6F3', duration: 0 })
-        .fromTo('.contact-page__content', { opacity: 0,  skewX: 10 }, { opacity: 1,  skewX: 0,duration: 2, })
-        
+        tl.to('body', { backgroundColor: '#F4F6F3', overflow: 'hidden', duration: 0 })
+            .to('.contact-page', {opacity: 1, duration: 0})
+            .to('.contact-page__heading', {opacity:1, duration: 0})
+            .fromTo('.heading_animated-2', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 1,delay: 2, stagger: { amount: 1 }, ease: "power3.inOut" })
+            .fromTo('.contact-page__offer', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 1, ease: "power3.inOut" })
+            .fromTo('.contact-page__offer-heading h2', { opacity: 0, y: 100, skewX: 20 }, { opacity: 1, y: 0, skewX: 0, duration: 1, ease: "power3.inOut" })
+            .fromTo('.contact-page__offer-content', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1, ease: "power3.inOut" })
+            .to('body', {overflow:'initial', duration: 0})
     }, [])
 
     return (
@@ -25,7 +30,7 @@ const Contact = () => {
                 <div className="contact-page">
                     <div className="contact-page__content">
                         <div className="contact-page__heading">
-                            <h1 className="contact-page__title">A lo que vinimos.</h1>
+                            <h1 className="contact-page__title">{"A lo que vinimos.".split("").map((e, i) => <span className="heading_animated-2" key={ i }>{ e }</span>)}</h1>
                         </div>
                         <div className="contact-page__offer">
                             <div className="contact-page__offer-heading">

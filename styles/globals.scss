@@ -24,9 +24,14 @@
   font-display: swap;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body{
   color: $secondary-color;
-
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   font-family: $secondary-font;
   font-weight: 400;
 

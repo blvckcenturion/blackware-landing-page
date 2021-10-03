@@ -3477,6 +3477,11 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+scramble-text@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/scramble-text/-/scramble-text-0.0.8.tgz#8a8ea96ed3741b85a92a048242e9e2071c9e3cb1"
+  integrity sha1-io6pbtN0G4WpKgSCQuniBxyePLE=
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
