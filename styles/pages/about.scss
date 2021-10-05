@@ -173,7 +173,7 @@
             width: 100%;
             border-bottom: 1px solid $primary-color;
             padding-bottom: 50px;
-            
+
         }
         &-proj{
             width: 100%;
@@ -194,9 +194,16 @@
                 @include md{
                     width: 90%;
                 }
+                .proj-name, .proj-url{
+                    width: 100%;
+                }
                 
                 a{
                     color: $primary-color;
+                    font-size: .8rem;
+                    @include md{
+                        font-size: 1rem;
+                    }
                 }
             }
             .proj-img{

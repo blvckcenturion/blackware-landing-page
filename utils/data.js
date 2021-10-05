@@ -10,10 +10,6 @@ export const SOCIAL_MEDIA_LINKS = [
         icon: faInstagram,
     },
     {
-        href: 'https://tiktok.com/',
-        icon: faTiktok
-    },
-    {
         href: 'https://api.whatsapp.com/send?phone=59176918783&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20PASHA',
         icon: faWhatsapp
     },
