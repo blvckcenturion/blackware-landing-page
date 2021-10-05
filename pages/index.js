@@ -89,14 +89,14 @@ const Home = () => {
   }, [width])
 
 
-  const navigateToAbout = (href) => {
+  const navigateTo = (href) => {
     const tl = gsap.timeline();
     tl
       .to('body', { overflow: 'hidden', backgroundColor: "#F4F6F3", duration: 0 })
       .to('.about-wrapper', { width: '210vw', height: '210vw', duration: 1.5, ease: "power3.out" })
       .to('body', { backgroundColor: "#F4F6F3", duration: 0 })
       .to('.about-wrapper', { borderRadius: '0', duration: 1, delay: -1, ease: "power3.out" })
-      .then(() => router.push(href))
+      .then(() => router.push(href, undefined, {scroll:true}))
   }
 
   return (
@@ -113,10 +113,10 @@ const Home = () => {
           <InfiniteText/>
         </div>
         <div className="main-content-wrapper">
-          <button className="main-button" onClick={ () => navigateToAbout('/about') }>
+          <button className="main-button" onClick={ () => navigateTo('/about') }>
             Sobre Nosotros.
           </button>
-          <button className="main-button" onClick={ () => navigateToAbout('/contact') }>
+          <button className="main-button" onClick={ () => navigateTo('/contact') }>
             Contratanos.
           </button>
         </div>

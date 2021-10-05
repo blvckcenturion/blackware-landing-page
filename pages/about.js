@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import EnumeratedContainer from "../components/enumeratedContainer"
 import Heading from "../components/heading"
 import ScrambleText from 'scramble-text';
+
 const About = () => {
 
     const router = useRouter()
@@ -33,7 +34,8 @@ const About = () => {
         const tl = gsap.timeline()
         tl
             .to('body', { duration: 0, overflow: 'initial'})
-            .to('.wrapper', { opacity: 0, duration: 1 }).then(() => router.push('/contact'))
+            .to('.wrapper', { opacity: 0, duration: 1 })
+            .then(() => router.push('/contact', undefined, {scroll: true}))
             
      }
     return (

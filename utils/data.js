@@ -60,5 +60,19 @@ export const CASES = [
         desktopImg: 'verve-desktop.png',
         mobileImg: 'verve-mobile.png',
         alt: "Aplicacion Web de Verve Coffee Roasters",
-    }
+    },
+    {
+        name: "THE BRUBAKER",
+        url: "https://thebrubaker.com/",
+        desktopImg: 'brubaker-desktop.png',
+        mobileImg: 'brubaker-mobile.png',
+        alt: "Aplicacion Web de The Brubaker",
+    },
+    {
+        name: "LACONICUM",
+        url: "https://laconicum.com/",
+        desktopImg: 'laconicum-desktop.png',
+        mobileImg: 'laconicum-mobile.png',
+        alt: "Aplicacion Web de Laconicum",
+    },
 ]
