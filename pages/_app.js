@@ -3,6 +3,8 @@ import 'normalize.css'
 import BasicLayout from '../layouts/BasicLayout'
 import { useEffect } from 'react'
 import Head from 'next/head';
+import ScrollToTop from '../utils/scrollToTop';
+import { CASES } from '../utils/data';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     document.addEventListener('gesturestart', function(e) {
