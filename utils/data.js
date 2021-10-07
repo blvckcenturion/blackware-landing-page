@@ -2,19 +2,19 @@ import { faFacebookF, faTiktok, faInstagram, faWhatsapp, faTelegramPlane } from 
 
 export const SOCIAL_MEDIA_LINKS = [
     {
-        href: 'https://www.facebook.com/',
+        href: 'https://www.facebook.com/blackware.tech',
         icon: faFacebookF,
     },
     {
-        href: 'https://www.instagram.com/',
+        href: 'https://www.instagram.com/blackware.tech/',
         icon: faInstagram,
     },
     {
-        href: 'https://api.whatsapp.com/send?phone=59176918783&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20PASHA',
+        href: 'https://api.whatsapp.com/send?phone=59162727220&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20las%20aplicaciones%20de%20blackware!',
         icon: faWhatsapp
     },
     {
-        href: 'https://api.whatsapp.com/send?phone=59176918783&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20PASHA',
+        href: 'https://t.me/blackware.tech',
         icon: faTelegramPlane
     },
 ]
