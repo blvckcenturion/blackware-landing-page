@@ -21,6 +21,10 @@ const Contact = () => {
             .to('body', {overflow:'initial', duration: 0})
     }, [])
 
+    const navigateToForm = () => {
+        window.location.href = 'https://forms.gle/6yVXLRdWt4RMbSjf7'
+    }
+
     return (
         <>
             <Header />
@@ -76,7 +80,7 @@ const Contact = () => {
                                     <p>Nos interesa ayudarte. Por eso te damos una cuota para tu negocio gratuita, llena el siguiente formulario para ponernos en contacto y empezar con la evaluacion de tu negocio. </p>
                                 </div>
                                 <div className="free-quote-content-btn">
-                                    <button className="">
+                                    <button onClick={ navigateToForm}>
                                         Ir al formulario.
                                     </button>
                                 </div>
