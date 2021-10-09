@@ -12,13 +12,13 @@ import Footer from '../components/footer'
 import { useRouter } from 'next/router'
 import EnumeratedContainer from "../components/enumeratedContainer"
 import Heading from "../components/heading"
-import ScrambleText from 'scramble-text';
 import ScrollToTop from "../utils/scrollToTop"
 
 const About = () => {
 
     const router = useRouter()
     useEffect(() => {
+        window.scrollTo(0, 0)
         const tl = gsap.timeline()
         tl
             
@@ -30,7 +30,6 @@ const About = () => {
             .fromTo('.about-page__enum', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 1, ease: "power3.inOut" })
             
             .to('body', {  overflow: 'initial', duration: 0 })
-            
     }, [])
 
     const goToContact = () => {

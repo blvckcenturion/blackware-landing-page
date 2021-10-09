@@ -15,6 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     const tl = gsap.timeline()
+    window.scrollTo(0, 0)
     
     const enterScreen = { opacity: 1, duration: .1, ease: "power3.out" }
     const leaveScreen = { opacity: 0, duration: .1, ease: "power3.out" }

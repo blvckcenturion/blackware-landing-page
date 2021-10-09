@@ -13,6 +13,8 @@ function MyApp({ Component, pageProps }) {
       document.body.style.zoom =1;
   });
   
+    
+  
   document.addEventListener('gesturechange', function(e) {
       e.preventDefault();
       // special hack to prevent zoom-to-tabs gesture in safari
