@@ -10,11 +10,11 @@ export const SOCIAL_MEDIA_LINKS = [
         icon: faInstagram,
     },
     {
-        href: 'https://api.whatsapp.com/send?phone=59170398860&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20las%20aplicaciones%20de%20blackware!',
+        href: 'https://api.whatsapp.com/send?phone=59176918783&text=Hola!%20quisiera%20hacer%20una%20consulta%20sobre%20las%20aplicaciones%20de%20blackware!',
         icon: faWhatsapp
     },
     {
-        href: 'https://t.me/blackwaretech',
+        href: 'https://t.me/SantiagoSarabia',
         icon: faTelegramPlane
     },
 ]
